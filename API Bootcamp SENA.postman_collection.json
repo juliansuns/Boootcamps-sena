@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5365f72c-3c25-4956-b628-a8d2bd7df0a1",
+		"_postman_id": "dacf9e6a-c7c1-42be-b280-65d27da0529d",
 		"name": "API Bootcamp SENA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/apibootcamps",
+					"raw": "http://127.0.0.1:8000/api/bootcamps",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -21,7 +21,15 @@
 					],
 					"port": "8000",
 					"path": [
-						"apibootcamps"
+						"api",
+						"bootcamps"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
 					]
 				}
 			},
@@ -31,63 +39,9 @@
 			"name": "Traer bootcamp por ID",
 			"request": {
 				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Crear bootcamps",
-			"request": {
-				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/bootcamps",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"bootcamps"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Actualizar bootcamps",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/bootcamps",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"bootcamps"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Eliminar bootcamps",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/bootcamps/9",
+					"raw": "http://127.0.0.1:8000/api/bootcamps/3",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -99,7 +53,104 @@
 					"path": [
 						"api",
 						"bootcamps",
-						"9"
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear bootcamps",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\":\"Data Science Advanced mode\",\r\n        \"description\": \"Data Science for senior programmers\",\r\n        \"website\": \"laravel.org/datascience\",\r\n        \"phone\":\"(444)444-444\",\r\n        \"user_id\": 1\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/bootcamps?Content-type=application\\json",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"bootcamps"
+					],
+					"query": [
+						{
+							"key": "Content-type",
+							"value": "application\\json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar bootcamps",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Javascript for experts\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/bootcamps/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"bootcamps",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar bootcamps",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/bootcamps/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"bootcamps",
+						"1"
 					]
 				}
 			},
