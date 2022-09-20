@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class StoreBootcampRequest extends FormRequest
+class CourseRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,18 +26,16 @@ class StoreBootcampRequest extends FormRequest
     public function rules()
     {
         return [
-            "name" => "required|min:5",
-            "description" => "required",
-            "average_cost"=> "numeric",
-            "user_id" => "exists:users,id"
+            "title" => "required|max:30|min:10",
+            "description" => "required|min:10",
+            "weeks"  => "digits:1",
+            "enroll_cost" => "required|numeric",
+            "minimum_skill" => "in:Beginner,Intermediate,Advanced,Expert"
         ];
     }
-
-
-
     /**
-    * 
-    */
+     * 
+     */
     protected function failedValidation(Validator $v){
         //lanzar una exepcion 
         throw new HttpResponseException( response()->json([

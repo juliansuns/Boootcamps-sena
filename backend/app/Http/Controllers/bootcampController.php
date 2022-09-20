@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Bootcamp;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreBootcampRequest;
+
 use App\Http\Resources\BootcampResource;
 use App\Http\Resources\BootcampCollection;
 
